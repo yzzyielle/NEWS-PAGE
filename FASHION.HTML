@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZBFashion — Lifestyle Trends</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#F9F8F6;
+  --secondary:#EFE9E3;
+  --accent:#D9CFC7;
+  --highlight:#C9B59C;
+  --text:#000000;
+  --muted:#4A4A4A;
+  --radius:12px;
+  --max-width:1200px;
+}
+*{box-sizing:border-box;}
+body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--primary);display:flex;justify-content:center;padding:40px 20px;}
+.wrap{width:100%;max-width:var(--max-width);}
+
+/* Header */
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{width:64px;height:64px;background:var(--highlight);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--text);font-weight:800;font-size:22px;}
+.site-title{margin:0;font-size:20px;}
+.site-sub{font-size:12px;color:var(--muted);}
+nav.top-nav{display:flex;gap:15px;}
+nav a{color:var(--text);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:0.2s;}
+nav a.active, nav a:hover{background:var(--accent);}
+
+/* Layout */
+.main-grid{display:grid;grid-template-columns:1fr 300px;gap:25px;align-items:start;}
+
+/* Hero */
+.hero{display:flex;gap:20px;padding:20px;border-radius:var(--radius);background:var(--secondary);color:var(--text);box-shadow:0 8px 25px rgba(0,0,0,0.15);transition:transform 0.3s;}
+.hero:hover{transform:translateY(-4px);}
+.hero-media{flex:1;height:250px;border-radius:var(--radius);overflow:hidden;}
+.hero-media img{width:100%;height:100%;object-fit:cover;}
+.hero-content h2{margin-top:0;font-size:28px;}
+.hero-content p{color:var(--muted);line-height:1.5;}
+.kicker{font-size:12px;font-weight:700;margin-bottom:8px;color:var(--highlight);}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px;}
+.card{background:var(--secondary);padding:12px;border-radius:var(--radius);display:flex;gap:12px;transition:transform 0.2s;}
+.card:hover{transform:translateY(-3px);}
+.card .thumb{width:180px;height:100px;border-radius:var(--radius);overflow:hidden;}
+.card .thumb img{width:100%;height:100%;object-fit:cover;}
+.card h3{margin:0;font-size:16px;color:var(--text);}
+.card p{margin:5px 0;color:var(--muted);font-size:14px;}
+.card a.button{margin-top:6px;padding:6px 10px;background:var(--highlight);color:var(--text);border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;transition:0.2s;}
+.card a.button:hover{background:var(--accent);}
+
+/* Sidebar */
+aside.sidebar{position:relative;}
+.glass-panel{background:var(--secondary);padding:15px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+.trending h4{margin:0 0 10px;color:var(--text);}
+.trend{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--accent);}
+.trend p{margin:0;color:var(--muted);font-size:14px;}
+.trend a.button{padding:4px 8px;background:var(--highlight);color:var(--text);font-size:12px;border-radius:6px;text-decoration:none;}
+.trend a.button:hover{background:var(--accent);}
+
+/* Footer */
+footer{text-align:center;color:var(--muted);margin-top:25px;font-size:13px;}
+
+/* Back to top */
+.back-to-top{position:fixed;bottom:20px;right:20px;background:var(--highlight);color:var(--text);padding:12px;border:none;border-radius:50%;cursor:pointer;display:none;transition:0.2s;}
+.back-to-top:hover{transform:translateY(-2px);}
+
+/* Responsive */
+@media(max-width:900px){
+  .main-grid{grid-template-columns:1fr;}
+  .cards{grid-template-columns:1fr;}
+  .hero{flex-direction:column;}
+  .hero-content{width:100%;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo">YZBF</div>
+    <div>
+      <h1 class="site-title">YZBFashion</h1>
+      <div class="site-sub">Style - Trends - Lifestyle</div>
+    </div>
+  </div>
+  <nav class="top-nav">
+    <a href="NEWSPAGE.html">HOME</a>
+    <a href="BEAUTYPAGE.html">BEAUTY</a>
+    <a href="LIFESTYLEPAGE.html" class="active">LIFESTYLE</a>
+  </nav>
+</header>
+
+<main class="main-grid">
+  <section>
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-media">
+        <img src="Top Lifestyle Trends to Watch.JPEG" alt="Top Fashion Trends"/>
+      </div>
+      <div class="hero-content">
+        <div class="kicker">Lifestyle</div>
+        <h2>Top Lifestyle Trends to Watch</h2>
+        <p>From wellness routines to minimalist living, discover the top lifestyle trends shaping 2025.</p>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+      <article class="card">
+        <div class="thumb"><img src="Wellnes.JPEG" alt="Celebrity Fitness"/></div>
+        <div>
+          <div class="kicker">Wellness</div>
+          <h3>Celebrity Fitness Trends</h3>
+          <p>Learn how stars like Taylor Swift maintain wellness and fitness routines for a balanced lifestyle.</p>
+          <a href="https://www.tatlerasia.com/lifestyle/wellbeing/celebrity-wellness-do-these-trendy-health-hacks-work" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="Mindful-living-the-Powerful-Art-of-Mindfulness-Daily-Meditation-1021x580.JPEG" alt="Mindful Living"/></div>
+        <div>
+          <div class="kicker">Mindfulness</div>
+          <h3>Mindful Living</h3>
+          <p>Explore meditation, minimalism, and conscious living practices adopted by influencers and trendsetters.</p>
+          <a href="https://managemagazine.com/article-bank/mindfulness/mindful-living-the-powerful-art-of-mindfulness-daily-meditation/" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="Interior.JPEG" alt="Home Decor"/></div>
+        <div>
+          <div class="kicker">Interior</div>
+          <h3>Minimalist Home Decor</h3>
+          <p>2025’s top interiors embrace simplicity, sustainability, and warm neutral palettes for cozy living spaces.</p>
+          <a href="https://www.architecturaldigest.com/story/minimalist-home-design" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="TECH AND LIFESTYLE.JPEG" alt="Lifestyle Gadgets"/></div>
+        <div>
+          <div class="kicker">Tech & Lifestyle</div>
+          <h3>Lifestyle Gadgets</h3>
+          <p>Discover the latest tech gadgets designed to improve daily life and enhance comfort, efficiency, and wellness.</p>
+          <a href="https://thegadgetflow.com/lifestyle-products/" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <div class="glass-panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <h4 style="margin:0">Trending</h4>
+        <small style="color:var(--muted)">Updated</small>
+      </div>
+      <div class="trending">
+        <div class="trend">
+          <p>Celebrity Fitness</p>
+          <a href="https://www.shape.com/celebrity/workouts/taylor-swift-fitness-routine" target="_blank" class="button">View</a>
+        </div>
+        <div class="trend">
+          <p>Mindful Living</p>
+          <a href="https://www.mindful.org/what-is-mindfulness/" target="_blank" class="button">View</a>
+        </div>
+        <div class="trend">
+          <p>Minimalist Home Decor</p>
+          <a href="https://www.architecturaldigest.com/story/minimalist-home-design" target="_blank" class="button">View</a>
+        </div>
+        <div class="trend">
+          <p>Lifestyle Gadgets</p>
+          <a href="https://www.wired.com/category/lifestyle/" target="_blank" class="button">View</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  © <span id="year"></span> YZBFashion — Lifestyle Trends 2025.
+</footer>
+
+<button class="back-to-top" id="backTop">↑</button>
+</div>
+
+<script>
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{backTop.style.display=window.scrollY>300?'block':'none';});
+backTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

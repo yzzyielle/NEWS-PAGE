@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZBNews — Cebu Recovery After Disaster</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#541212;
+  --teal:#468A9A;
+  --grey:#EEEEEE;
+  --glass: rgba(255,255,255,0.06);
+  --muted: rgba(245,245,245,0.8);
+  --accent: #FFFFFF;
+  --radius:14px;
+  --max-width:1200px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--accent);}
+body{
+  background: linear-gradient(180deg, #0F0E0E 0%, #541212 33%, #468A9A 66%, #EEEEEE 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:48px 20px;
+  display:flex;justify-content:center;align-items:flex-start;
+}
+.wrap{width:100%;max-width:var(--max-width);}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;gap:18px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:20px;box-shadow:0 6px 20px rgba(0,0,0,0.35);}
+h1.site-title{font-size:20px;margin:0;letter-spacing:1px;}
+.site-sub{font-size:12px;color:var(--muted);margin-top:4px;}
+nav.top-nav{display:flex;gap:18px;align-items:center;}
+nav a{color:var(--accent);text-decoration:none;font-weight:600;padding:10px 12px;border-radius:10px;transition:0.2s transform;}
+nav a:hover{background:var(--glass);transform:translateY(-2px);}
+nav a.active{background:var(--glass);font-weight:700;}
+.main-grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start;}
+.hero{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));padding:24px;border-radius:var(--radius);box-shadow:0 10px 40px rgba(0,0,0,0.45);display:flex;gap:20px;align-items:center;transition:transform 0.3s;}
+.hero:hover{transform:translateY(-4px);}
+.hero .hero-media{flex:1;height:260px;border-radius:12px;background:linear-gradient(135deg, rgba(0,0,0,0.25), rgba(255,255,255,0.02));display:flex;align-items:flex-end;padding:18px;transition:transform 0.3s;}
+.hero:hover .hero-media{transform:scale(1.02);}
+.hero .hero-media img{width:100%;height:100%;object-fit:cover;border-radius:10px;}
+.hero .hero-content{width:420px;}
+.kicker{font-size:12px;font-weight:700;background:rgba(255,255,255,0.06);display:inline-block;padding:6px 10px;border-radius:999px;margin-bottom:12px;}
+.hero h2{margin:0 0 10px;font-size:28px;}
+.hero p{margin:0;color:var(--muted);line-height:1.6;}
+aside.sidebar{position:relative;}
+.glass-panel{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.45);}
+.trending h4{margin:0 0 12px;}
+.trend{display:flex;gap:12px;align-items:center;padding:8px 6px;border-radius:8px;transition:transform 0.2s;cursor:pointer;}
+.trend:hover{transform:translateX(3px);}
+.trend .num{font-weight:800;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.04);display:grid;place-items:center;}
+.trend p{margin:0;font-size:13px;}
+footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center;}
+.linkable-sentence{position:relative;cursor:pointer;}
+.linkable-sentence::after{content:'';position:absolute;left:0;right:0;height:2px;bottom:-2px;background:linear-gradient(90deg,var(--accent),rgba(255,255,255,0.3));transform:scaleX(0);transform-origin:left;transition:transform .22s;}
+.linkable-sentence:hover::after{transform:scaleX(1);}
+a.inline-link{color:inherit;text-decoration:none;font-weight:700;}
+.back-to-top{position:fixed;bottom:20px;right:20px;background:var(--maroon);color:var(--grey);padding:12px;border:none;border-radius:50%;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,0.3);display:none;transition:transform 0.2s;}
+.back-to-top:hover{transform:translateY(-3px);}
+@media (max-width:980px){.main-grid{grid-template-columns:1fr;}.hero{flex-direction:column;}.hero .hero-content{width:100%;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="brand">
+<div class="logo">YZB</div>
+<div>
+<h1 class="site-title">YZBNews</h1>
+<div class="site-sub">Multimedia - Entertainment - Culture</div>
+</div>
+</div>
+<nav class="top-nav">
+<a href="NEWSPAGE.html">HOME</a>
+<a href="editorial.html">EDITORIAL</a>
+<a href="comic.html">COMIC</a>
+<a href="fashion.html">FASHION</a>
+<a href="entertainment.html">ENTERTAINMENT</a>
+<a href="SPORTSPAGE.html">SPORTS</a>
+</nav>
+</header>
+
+<main class="main-grid">
+<section>
+<div class="hero">
+<div class="hero-media">
+<img src="Cebu City Accelerates Recovery After Typhoon and Earthquake.jpeg" alt="Cebu Disaster Recovery">
+</div>
+<div class="hero-content">
+<div class="kicker">TOP STORY</div>
+<h2>Cebu City Accelerates Recovery After Typhoon and Earthquake</h2>
+<p>
+<span class="linkable-sentence">Cebu City continues its rapid recovery after a devastating typhoon and a 6.2-magnitude earthquake struck within weeks of each other. The dual disasters displaced thousands and damaged major infrastructure.</span>
+<span class="linkable-sentence">According to the Disaster Response Council, over ₱1.2 billion worth of rehabilitation projects are now underway — focusing on road repairs, school rebuilding, and housing restoration for affected families.</span>
+<span class="linkable-sentence">Local volunteers and NGOs have joined forces with the city government to ensure transparent aid distribution and to promote community-based recovery initiatives. "We are rebuilding not just homes, but hope," said Mayor Rama during a recent press briefing.</span>
+</p>
+</div>
+</div>
+</section>
+
+<aside class="sidebar">
+<div class="glass-panel">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+<h4 style="margin:0">Trending</h4>
+<small style="color:var(--muted)">Updated</small>
+</div>
+<div class="trending">
+<div class="trend" onclick="location.href='TRENDINGSTORY1.html'"><div class="num">1</div><p>Bridge Collapse in Visayas</p></div>
+<div class="trend" onclick="location.href='TRENDINGSTORY2.html'"><div class="num">2</div><p>Metro Manila POGO Ban</p></div>
+<div class="trend" onclick="location.href='TRENDINGSTORY3.html'"><div class="num">3</div><p>Cebu Recovery After Disaster</p></div>
+<div class="trend" onclick="location.href='TRENDINGSTORY4.html'"><div class="num">4</div><p>Philippine Peso Slides</p></div>
+</div>
+</div>
+</aside>
+</main>
+
+<footer>
+© <span id="year"></span> YZBNews — All rights reserved.
+</footer>
+
+<button class="back-to-top" id="backTop">↑</button>
+</div>
+
+<script>
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+  backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+backTop.addEventListener('click',()=>{
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZBNews — Sports</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-dark:#1A1A1D;
+  --bg-secondary:#3B1C32;
+  --accent-dark:#6A1E55;
+  --accent-light:#A64D79;
+  --muted:rgba(245,245,245,0.7);
+  --accent:#FFFFFF;
+  --radius:14px;
+  --max-width:1300px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--accent);}
+body{
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-secondary) 100%);
+  padding:48px 20px;
+  display:flex;justify-content:center;align-items:flex-start;
+}
+.wrap{width:100%;max-width:var(--max-width);}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;gap:18px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(166,77,121,0.4), rgba(106,30,85,0.3));display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:20px;box-shadow:0 6px 20px rgba(0,0,0,0.35);}
+h1.site-title{font-size:20px;margin:0;letter-spacing:1px;}
+.site-sub{font-size:12px;color:var(--muted);margin-top:4px;}
+nav.top-nav{display:flex;gap:18px;align-items:center;}
+nav a{color:var(--accent);text-decoration:none;font-weight:600;padding:10px 12px;border-radius:10px;transition:0.2s transform;}
+nav a:hover{background:rgba(166,77,121,0.3);transform:translateY(-2px);}
+nav a.active{background:rgba(106,30,85,0.5);font-weight:700;}
+
+.main-grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start;}
+.hero{background:linear-gradient(180deg, rgba(166,77,121,0.1), rgba(106,30,85,0.05));padding:24px;border-radius:var(--radius);box-shadow:0 10px 40px rgba(0,0,0,0.45);display:flex;gap:20px;align-items:center;transition:transform 0.3s;}
+.hero:hover{transform:translateY(-4px);}
+.hero .hero-media{flex:1;height:260px;border-radius:12px;background:linear-gradient(135deg, rgba(59,28,50,0.5), rgba(26,26,29,0.3));display:flex;align-items:flex-end;padding:18px;transition:transform 0.3s;}
+.hero:hover .hero-media{transform:scale(1.02);}
+.hero .hero-media img{width:100%;height:100%;object-fit:cover;border-radius:10px;}
+.hero .hero-content{width:420px;}
+.kicker{font-size:12px;font-weight:700;background:rgba(166,77,121,0.3);display:inline-block;padding:6px 10px;border-radius:999px;margin-bottom:12px;}
+.hero h2{margin:0 0 10px;font-size:28px;}
+.hero p{margin:0;color:var(--muted);line-height:1.6;}
+
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px;}
+.card{background:linear-gradient(180deg, rgba(106,30,85,0.2), rgba(59,28,50,0.1));padding:14px;border-radius:12px;display:flex;gap:12px;align-items:start;transition:transform 0.3s;}
+.card:hover{transform:translateY(-3px) scale(1.02);}
+.card .thumb{width:140px;height:96px;border-radius:8px;background:linear-gradient(135deg, rgba(26,26,29,0.5), rgba(106,30,85,0.3));flex-shrink:0;background-size:cover;background-position:center;}
+.card h3{margin:0;font-size:15px;color:#A64D79;}
+.card p{margin:6px 0 0;color:var(--muted);font-size:13px;}
+
+aside.sidebar{position:relative;}
+.glass-panel{background:linear-gradient(180deg, rgba(106,30,85,0.2), rgba(59,28,50,0.1));padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.45);}
+.trending h4{margin:0 0 12px;color:#A64D79;}
+.trend{display:flex;gap:12px;align-items:center;padding:8px 6px;border-radius:8px;transition:transform 0.2s;cursor:pointer;}
+.trend:hover{transform:translateX(3px);}
+.trend .num{font-weight:800;width:34px;height:34px;border-radius:8px;background:rgba(166,77,121,0.3);display:grid;place-items:center;}
+.trend p{margin:0;font-size:13px;}
+
+footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center;}
+.back-to-top{position:fixed;bottom:20px;right:20px;background:var(--accent-dark);color:var(--accent);padding:12px;border:none;border-radius:50%;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,0.3);display:none;transition:transform 0.2s;}
+.back-to-top:hover{transform:translateY(-3px);}
+
+@media (max-width:980px){
+  .main-grid{grid-template-columns:1fr;}
+  .cards{grid-template-columns:1fr;}
+  .hero{flex-direction:column;}
+  .hero .hero-content{width:100%;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">YZB</div>
+      <div>
+        <h1 class="site-title">YZBNews</h1>
+        <div class="site-sub">Multimedia - Entertainment - Culture</div>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <a href="NEWSPAGE.html">HOME</a>
+      <a href="editorial.html">Editorial</a>
+      <a href="comic.html">COMIC</a>
+      <a href="fashion.html">FASHION</a>
+      <a href="entertainment.html">ENTERTAINMENT</a>
+      <a href="SPORTSPAGE.html" class="active">SPORTS</a>
+    </nav>
+  </header>
+
+  <main class="main-grid">
+    <section>
+      <!-- Hero: Soccer -->
+      <div class="hero">
+        <div class="hero-media">
+          <img src="SOCCERIMG.JPEG" alt="Soccer Match"/>
+        </div>
+        <div class="hero-content">
+          <div class="kicker">TOP SPORTS</div>
+          <h2>Soccer League Highlights: Exciting Season Finale</h2>
+          <p>Star players shine as top teams battle for the championship in thrilling matches.</p>
+        </div>
+      </div>
+
+      <!-- Cards 1-4: Latest Sports News -->
+      <div class="cards">
+        <div class="card">
+          <div class="thumb" style="background-image:url('Volleyballs.JPEG');"></div>
+          <div>
+            <h3>Volleyball: Olympic Matches Thrill Fans</h3>
+            <p>Top teams compete with electrifying plays and unexpected upsets in Olympic volleyball.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb" style="background-image:url('Basketball.JPEG');"></div>
+          <div>
+            <h3>Basketball Finals Recap: Philippines</h3>
+            <p>Exciting matchups and buzzer-beaters electrify stadiums as the finals reach a dramatic climax.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb" style="background-image:url('Swimming.JPEG');"></div>
+          <div>
+            <h3>Swimming: Olympic Records Broken</h3>
+            <p>World-class swimmers compete for gold, with new records being set in multiple events.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb" style="background-image:url('Filipino Athletes Shine Globally.JPEG');"></div>
+          <div>
+            <h3>Filipino Athletes Shine Globally</h3>
+            <p>Historic wins and medal counts highlight the Philippine presence in the international sports scene.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Sidebar -->
+    <aside class="sidebar">
+      <div class="glass-panel">
+        <h4>Trending Sports</h4>
+        <div class="trend" onclick="window.open('https://en.volleyballworld.com/volleyball/competitions/men-world-championship/news/japan-sweep-libya-men-volleyball-world-championship-farewell-quezon-city')"><div class="num">1</div><p>Volleyball Highlights</p></div>
+        <div class="trend" onclick="window.open('https://www.nba.com/')"><div class="num">2</div><p>Basketball Finals</p></div>
+        <div class="trend" onclick="window.open('https://www.espn.ph/football/fixtures')"><div class="num">3</div><p>Soccer Top Matches</p></div>
+        <div class="trend" onclick="window.open('https://www.worldaquatics.com/competitions/4725/world-aquatics-championships-singapore-2025/medals?disciplines=')"><div class="num">4</div><p>Swimming Medals</p></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>© <span id="year"></span> YZBNews — Sports Division</footer>
+  <button class="back-to-top" id="backTop">↑</button>
+</div>
+
+<script>
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll',()=>{backTop.style.display=window.scrollY>300?'block':'none';});
+backTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

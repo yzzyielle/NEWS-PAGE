@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZBComic — Chinese Comics</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #F7F7F7;
+  --gold: #FFB22C;
+  --brown: #854836;
+  --black: #000000;
+  --glass: rgba(0, 0, 0, 0.08);
+  --muted: rgba(0, 0, 0, 0.65);
+  --radius: 16px;
+  --max-width: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+body {
+  background: linear-gradient(180deg, var(--white) 0%, var(--brown) 100%);
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--gold), var(--brown));
+  color: var(--white);
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+h1.site-title {
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.site-sub {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+nav.top-nav {
+  display: flex;
+  gap: 18px;
+}
+
+nav a {
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: var(--glass);
+  transform: translateY(-2px);
+}
+
+nav a.active {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* MAIN */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 30px;
+  align-items: start;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(247, 247, 247, 0.2));
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.hero:hover {
+  transform: translateY(-4px);
+}
+
+.hero .hero-media {
+  flex: 1;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.hero .hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .hero-content {
+  width: 420px;
+}
+
+.kicker {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--gold);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--black);
+}
+
+.hero p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 178, 44, 0.05));
+  padding: 16px;
+  border-radius: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  transition: transform 0.3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card .thumb {
+  width: 140px;
+  height: 96px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: var(--black);
+}
+
+.card p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.card a.button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.card a.button:hover {
+  background: var(--brown);
+  color: var(--white);
+}
+
+/* SIDEBAR */
+aside.sidebar {
+  position: relative;
+}
+
+.glass-panel {
+  background: linear-gradient(145deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+}
+
+.trending h4 {
+  margin: 0 0 12px;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 6px;
+  border-radius: 8px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.trend:hover {
+  transform: translateX(3px);
+}
+
+.trend .num {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--white);
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+.trend p {
+  font-size: 13px;
+  color: var(--black);
+}
+
+.trend a.button {
+  margin-left: auto;
+  padding: 4px 8px;
+  background: var(--brown);
+  color: var(--white);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.trend a.button:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* FOOTER */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--gold);
+  color: var(--black);
+  padding: 12px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  display: none;
+  transition: transform 0.2s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 980px) {
+  .main-grid { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+  .hero { flex-direction: column; }
+  .hero .hero-content { width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo">YZB</div>
+    <div>
+      <h1 class="site-title">YZBComic</h1>
+      <div class="site-sub">Multimedia - Entertainment - Culture</div>
+    </div>
+  </div>
+  <nav class="top-nav">
+    <a href="NEWSPAGE.html">HOME</a>
+    <a href="COMIC.html">COMIC</a>
+    <a href="KOREANCOMICSPAGE.html">KOREAN COMIC</a>
+    <a href="CHINESECOMICSPAGE.html" class="active">CHINESE COMIC</a>
+    <a href="JAPANESECOMICSPAGE.html">JAPANESE COMIC</a>
+  </nav>
+</header>
+
+<main class="main-grid">
+<section>
+<div class="hero">
+  <div class="hero-media">
+    <img src="Top Chinese Comics to Read Now.JPEG" alt="Chinese comics hero image"/>
+  </div>
+  <div class="hero-content">
+    <div class="kicker">Manhua</div>
+    <h2>Top Chinese Comics to Read Now</h2>
+    <p>Explore the vibrant world of Chinese manhua — from fantasy, martial arts, and supernatural adventures. Discover epic stories and beautiful illustrations!</p>
+  </div>
+</div>
+
+<div class="cards">
+  <article class="card">
+    <div class="thumb"><img src="Feng Shen Ji.JPEG" alt="Feng Shen Ji"/></div>
+    <div>
+      <div class="kicker">Fantasy Action</div>
+      <h3>Feng Shen Ji</h3>
+      <p>Follow the journey of Jiang Ziya in an epic battle against gods and demons, with intense martial arts and rich mythology.</p>
+      <a href="https://fengshenji.fandom.com/wiki/Main_Page" target="_blank" class="button">Read More</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="thumb"><img src="The Ravages of Time.JPEG" alt="The Ravages of Time"/></div>
+    <div>
+      <div class="kicker">Historical Drama</div>
+      <h3>The Ravages of Time</h3>
+      <p>Experience the strategies, betrayals, and legendary heroes of the Three Kingdoms era with a unique manhua twist.</p>
+      <a href="https://ravagesoftime.fandom.com/wiki/The_Ravages_of_Time_Wiki" target="_blank" class="button">Read More</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="thumb"><img src="Soul Land (Douluo Dalu).JPEG" alt="Soul Land"/></div>
+    <div>
+      <div class="kicker">Martial Arts Fantasy</div>
+      <h3>Soul Land (Douluo Dalu)</h3>
+      <p>Join Tang San as he discovers his soul powers, trains to become a martial legend, and battles fierce enemies in a fantastical world.</p>
+      <a href="https://soulland.fandom.com/wiki/Soul_Land_Wiki" target="_blank" class="button">Read More</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="thumb"><img src="Mo Dao Zu Shi.JPEG" alt="Mo Dao Zu Shi"/></div>
+    <div>
+      <div class="kicker">Supernatural Adventure</div>
+      <h3>Mo Dao Zu Shi</h3>
+      <p>Wei Wuxian returns from the dead to solve mysteries and protect those he loves, in a world of cultivation and dark secrets.</p>
+      <a href="https://modao-zushi.fandom.com/wiki/Grandmaster_of_Demonic_Cultivation_Wiki" target="_blank" class="button">Read More</a>
+    </div>
+  </article>
+</div>
+</section>
+
+<aside class="sidebar">
+<div class="glass-panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <h4 style="margin:0">Trending</h4>
+    <small style="color:var(--muted)">Updated</small>
+  </div>
+  <div class="trending">
+    <div class="trend"><div class="num">1</div><p>White Cat Legend</p><a href="https://whitecat.fandom.com/wiki/White_Cat_Legend" target="_blank" class="button">View</a></div>
+    <div class="trend"><div class="num">2</div><p>Star Martial God Technique</p><a href="https://smgt.fandom.com/wiki/Ye_XingHe" target="_blank" class="button">View</a></div>
+    <div class="trend"><div class="num">3</div><p>Battle Through the Heavens</p><a href="https://battle-through-the-heavens.fandom.com/wiki/Battle_Through_the_Heavens_Wiki" target="_blank" class="button">View</a></div>
+    <div class="trend"><div class="num">4</div><p>Tales of Demons and Gods</p><a href="https://novels-xianxiaxuanhuan.fandom.com/wiki/Tales_of_Demons_and_Gods_(TDG)" target="_blank" class="button">View</a></div>
+  </div>
+</div>
+</aside>
+</main>
+
+<footer>
+© <span id="year"></span> YZBComic — Chinese Comics Edition.
+</footer>
+
+<button class="back-to-top" id="backTop">↑</button>
+</div>
+
+<script>
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{backTop.style.display=window.scrollY>300?'block':'none';});
+backTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

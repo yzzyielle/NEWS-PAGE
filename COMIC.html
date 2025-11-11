@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZBNews — Comic/Cartoon</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --color1: #468A9A; 
+  --color2: #EEEEEE;
+  --glass: rgba(0,0,0,0.06);
+  --muted: rgba(15,15,15,0.7);
+  --accent: #0F0E0E;
+  --radius:14px;
+  --max-width:1200px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--accent);}
+body{
+  background: linear-gradient(180deg, var(--color1) 0%, var(--color2) 100%);
+  padding:48px 20px;
+  display:flex;justify-content:center;align-items:flex-start;
+}
+.wrap{width:100%;max-width:var(--max-width);}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;gap:18px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(0,0,0,0.12), rgba(255,255,255,0.04));display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:20px;box-shadow:0 6px 20px rgba(0,0,0,0.35);}
+h1.site-title{font-size:20px;margin:0;letter-spacing:1px;}
+.site-sub{font-size:12px;color:var(--muted);margin-top:4px;}
+nav.top-nav{display:flex;gap:18px;align-items:center;}
+nav a{color:var(--accent);text-decoration:none;font-weight:600;padding:10px 12px;border-radius:10px;transition:0.2s transform;}
+nav a:hover{background:var(--glass);transform:translateY(-2px);}
+nav a.active{background:var(--glass);font-weight:700;}
+.main-grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start;}
+.hero{background:linear-gradient(180deg, rgba(0,0,0,0.04), rgba(255,255,255,0.02));padding:24px;border-radius:var(--radius);box-shadow:0 10px 40px rgba(0,0,0,0.45);display:flex;gap:20px;align-items:center;transition:transform 0.3s;}
+.hero:hover{transform:translateY(-4px);}
+.hero .hero-media{flex:1;height:260px;border-radius:12px;background:linear-gradient(135deg, rgba(0,0,0,0.25), rgba(255,255,255,0.02));display:flex;align-items:flex-end;padding:18px;transition:transform 0.3s;}
+.hero:hover .hero-media{transform:scale(1.02);}
+.hero .hero-media img{width:100%;height:100%;object-fit:cover;border-radius:10px;}
+.hero .hero-content{width:420px;}
+.kicker{font-size:12px;font-weight:700;background:rgba(0,0,0,0.06);display:inline-block;padding:6px 10px;border-radius:999px;margin-bottom:12px;}
+.hero h2{margin:0 0 10px;font-size:28px;}
+.hero p{margin:0;color:var(--muted);line-height:1.6;}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px;}
+.card{background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(255,255,255,0.02));padding:14px;border-radius:12px;display:flex;gap:12px;align-items:start;transition:transform 0.3s;}
+.card:hover{transform:translateY(-3px) scale(1.02);}
+.card .thumb{width:140px;height:96px;border-radius:8px;background:linear-gradient(135deg, rgba(0,0,0,0.25), rgba(255,255,255,0.02));flex-shrink:0;}
+.card .thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
+.card h3{margin:0;font-size:15px;}
+.card p{margin:6px 0 0;color:var(--muted);font-size:13px;}
+aside.sidebar{position:relative;}
+.glass-panel{background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.45);}
+.trending h4{margin:0 0 12px;}
+.trend{display:flex;gap:12px;align-items:center;padding:8px 6px;border-radius:8px;transition:transform 0.2s;cursor:pointer;}
+.trend:hover{transform:translateX(3px);}
+.trend .num{font-weight:800;width:34px;height:34px;border-radius:8px;background:rgba(0,0,0,0.04);display:grid;place-items:center;}
+.trend p{margin:0;font-size:13px;}
+footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center;}
+.linkable-sentence{position:relative;cursor:pointer;}
+.linkable-sentence::after{content:'';position:absolute;left:0;right:0;height:2px;bottom:-2px;background:linear-gradient(90deg,var(--accent),rgba(0,0,0,0.3));transform:scaleX(0);transform-origin:left;transition:transform .22s;}
+.linkable-sentence:hover::after{transform:scaleX(1);}
+a.inline-link{color:inherit;text-decoration:none;font-weight:700;}
+.back-to-top{position:fixed;bottom:20px;right:20px;background:#468A9A;color:#0F0E0E;padding:12px;border:none;border-radius:50%;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,0.3);display:none;transition:transform 0.2s;}
+.back-to-top:hover{transform:translateY(-3px);}
+@media (max-width:980px){
+  .main-grid{grid-template-columns:1fr;}
+  .cards{grid-template-columns:1fr;}
+  .hero{flex-direction:column;}
+  .hero .hero-content{width:100%;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo">YZB</div>
+    <div>
+      <h1 class="site-title">YZBComic</h1>
+      <div class="site-sub">Multimedia - Entertainment - Culture</div>
+    </div>
+  </div>
+  <nav class="top-nav">
+    <a href="NEWSPAGE.html">HOME</a>
+    <a href="KOREANCOMICSPAGE.html">KOREAN COMIC</a>
+    <a href="CHINESECOMICSPAGE.html" class="active">CHINESE COMIC</a>
+    <a href="JAPANESECOMICSPAGE.html">JAPANESE COMIC</a>
+  </nav>
+</header>
+
+<main class="main-grid">
+  <section>
+    <div class="hero">
+      <div class="hero-media">
+        <img src="COMICSIMG.JPEG" alt="comic hero"/>
+      </div>
+      <div class="hero-content">
+        <div class="kicker">Featured</div>
+        <h2>Top Trending Comics</h2>
+        <p>
+          <span class="linkable-sentence">"The King's Avatar" — eSports and competitive gaming in China.</span>
+          <span class="linkable-sentence">"Soul Land" — action-packed fantasy adventure in a magical realm.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="cards" style="margin-top:22px">
+      <article class="card">
+        <div class="thumb"><img src="SOUL LAND.JPEG" alt="SOUL LAND"/></div>
+        <div>
+          <div class="kicker">Manhua</div>
+          <h3>SOUL LAND</h3>
+          <p class="muted">Tang San, a talented martial artist who is reincarnated into a world where people can cultivate "spirits" to gain powers.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="The Fragrant Flower Blooms with Dignity.jpeg" alt="The Fragrant Flower Blooms with Dignity"/></div>
+        <div>
+          <div class="kicker">Manga</div>
+          <h3>The Fragrant Flower Blooms with Dignity</h3>
+          <p class="muted">two teenagers from rival high schools who fall in love despite societal prejudices and the stark contrast between their schools.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="jungle juice.jpeg" alt="Jungle Juice"/></div>
+        <div>
+          <div class="kicker">Manhwa</div>
+          <h3>Jungle Juice</h3>
+          <p class="muted">Suchan Jang, a popular college student who secretly develops dragonfly wings after accidentally inhaling a mysterious bug spray called "Jungle Juice". </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="Jujutsu Kaisen.jpeg" alt="Jujutsu Kaisen"/></div>
+        <div>
+          <div class="kicker">Manga</div>
+          <h3>Jujutsu Kaisen</h3>
+          <p class="muted">Yuji Itadori, a high school student with extraordinary physical abilities, swallows a cursed object — a powerful finger of the demon Sukuna — to save his friends. Now hosting Sukuna, he enrolls in Tokyo Jujutsu High to learn how to fight curses, protect humans, and survive the deadly world of cursed spirits.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <div class="glass-panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <h4 style="margin:0">Trending</h4>
+        <small style="color:var(--muted)">Updated</small>
+      </div>
+      <div class="trending">
+        <div class="trend"><div class="num">1</div><p>One Piece by Eiichiro Oda</p></div>
+        <div class="trend"><div class="num">2</div><p>Solo Leveling by Chugong</p></div>
+        <div class="trend"><div class="num">3</div><p>Lord of the Mysteries Donghua</p></div>
+        <div class="trend"><div class="num">4</div><p>Lookism</p></div>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+© <span id="year"></span> YZBNews — Comics Entertainment.
+</footer>
+
+<button class="back-to-top" id="backTop">↑</button>
+</div>
+
+<script>
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{backTop.style.display=window.scrollY>300?'block':'none';});
+backTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

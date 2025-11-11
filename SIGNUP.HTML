@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZBNews — Sign Up</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#541212;
+  --maroon-hover:#872020;
+  --teal:#468A9A;
+  --teal-hover:#5fb1b7;
+  --grey:#EEEEEE;
+  --glass: rgba(255,255,255,0.06);
+  --muted: rgba(245,245,245,0.8);
+  --accent: #FFFFFF;
+  --radius:14px;
+  --max-width:480px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--accent);}
+body{
+  background: linear-gradient(180deg, #0F0E0E 0%, #541212 33%, #468A9A 66%, #EEEEEE 100%);
+  display:flex;justify-content:center;align-items:center;height:100vh;padding:20px;
+}
+.wrap{width:100%;max-width:var(--max-width);}
+header{display:flex;justify-content:center;margin-bottom:20px;gap:12px;align-items:center;}
+.logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);font-size:20px;box-shadow:0 6px 20px rgba(0,0,0,0.35);}
+.home-btn{padding:8px 14px;border-radius:10px;background:var(--maroon);color:var(--grey);font-weight:700;text-decoration:none;transition:0.2s;}
+.home-btn:hover{background:var(--maroon-hover);transform:translateY(-2px);}
+h1.site-title{font-size:24px;text-align:center;margin:12px 0 24px;}
+form.glass-panel{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:28px;border-radius:var(--radius);box-shadow:0 10px 40px rgba(0,0,0,0.45);display:flex;flex-direction:column;gap:16px;}
+form input{padding:12px 14px;border-radius:10px;border:none;background:rgba(255,255,255,0.1);color:var(--accent);font-size:14px;}
+form input::placeholder{color:var(--muted);}
+form button{padding:12px;border:none;border-radius:10px;background:var(--teal);color:var(--grey);font-weight:700;cursor:pointer;transition:transform 0.2s;}
+form button:hover{transform:translateY(-2px);}
+form .toggle-link{text-align:center;color:var(--accent);font-size:13px;}
+form .toggle-link a{color:var(--maroon);font-weight:700;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">YZB</div>
+    <a href="NEWSPAGE.html" class="home-btn">Home</a>
+  </header>
+
+  <h1 class="site-title">Sign Up for YZBNews</h1>
+  <form class="glass-panel" action="#" method="post">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Sign Up</button>
+    <div class="toggle-link">Already have an account? <a href="login.html">Login</a></div>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZBBeauty — Beauty Trends</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#FFF9F7;
+  --secondary:#F5F1EE;
+  --accent:#E1CFC1;
+  --highlight:#D6BFA8;
+  --text:#2C2C2C;
+  --muted:#6B6B6B;
+  --radius:15px;
+  --max-width:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--primary);color:var(--text);display:flex;justify-content:center;padding:30px 15px;}
+.wrap{width:100%;max-width:var(--max-width);}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;}
+.brand{display:flex;align-items:center;gap:15px;}
+.logo{width:60px;height:60px;background:var(--highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;color:var(--text);}
+.site-title{font-size:22px;font-weight:700;}
+.site-sub{font-size:13px;color:var(--muted);}
+nav.top-nav a{margin-left:12px;text-decoration:none;color:var(--text);font-weight:600;padding:8px 14px;border-radius:10px;transition:0.3s;}
+nav.top-nav a:hover, nav.top-nav a.active{background:var(--accent);}
+.main-grid{display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:start;}
+.hero{display:flex;flex-direction:column;gap:20px;background:var(--secondary);border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.12);transition:transform 0.3s;}
+.hero:hover{transform:translateY(-5px);}
+.hero-media img{width:100%;height:320px;object-fit:cover;}
+.hero-content{padding:20px;}
+.hero-content .kicker{font-size:13px;color:var(--highlight);font-weight:700;text-transform:uppercase;margin-bottom:6px;}
+.hero-content h2{font-size:26px;margin-bottom:10px;}
+.hero-content p{color:var(--muted);line-height:1.6;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:25px;}
+.card{background:var(--secondary);border-radius:var(--radius);overflow:hidden;transition:transform 0.3s;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+.card:hover{transform:translateY(-4px);}
+.card img{width:100%;height:150px;object-fit:cover;}
+.card-content{padding:15px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.card-content .kicker{font-size:12px;font-weight:700;color:var(--highlight);margin-bottom:6px;}
+.card-content h3{font-size:17px;margin-bottom:8px;}
+.card-content p{font-size:14px;color:var(--muted);flex:1;}
+.card-content a.button{align-self:flex-start;margin-top:10px;padding:6px 12px;background:var(--highlight);color:var(--text);text-decoration:none;border-radius:8px;font-weight:600;transition:0.3s;}
+.card-content a.button:hover{background:var(--accent);}
+.sidebar{display:flex;flex-direction:column;gap:20px;}
+.glass-panel{background:var(--secondary);padding:15px;border-radius:var(--radius);box-shadow:0 8px 25px rgba(0,0,0,0.12);}
+.trending h4{margin-bottom:12px;}
+.trend{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--accent);}
+.trend p{font-size:14px;color:var(--muted);}
+.trend a.button{padding:4px 10px;background:var(--highlight);color:var(--text);font-size:12px;border-radius:6px;text-decoration:none;transition:0.3s;}
+.trend a.button:hover{background:var(--accent);}
+footer{text-align:center;color:var(--muted);margin-top:35px;font-size:13px;}
+.back-to-top{position:fixed;bottom:20px;right:20px;background:var(--highlight);color:var(--text);border:none;padding:12px;border-radius:50%;cursor:pointer;display:none;transition:0.3s;}
+.back-to-top:hover{transform:translateY(-2px);}
+@media(max-width:900px){
+  .main-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo">YZB</div>
+    <div>
+      <h1 class="site-title">YZBBeauty</h1>
+      <div class="site-sub">Skincare - Makeup - Wellness</div>
+    </div>
+  </div>
+  <nav class="top-nav">
+    <a href="NEWSPAGE.html">HOME</a>
+    <a href="FASHION.html">FASHION</a>
+    <a href="LIFESTYLEPAGE.html">LIFESTYLE</a>
+  </nav>
+</header>
+
+<main class="main-grid">
+  <section>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-media">
+        <img src="Top Beauty Trends to Try.JPEG" alt="Top Beauty Trends">
+      </div>
+      <div class="hero-content">
+        <div class="kicker">2025 Trends</div>
+        <h2>Top Beauty Trends to Try</h2>
+        <p>Discover the latest skincare routines, makeup innovations, and wellness practices shaping the beauty industry in 2025.</p>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards">
+      <article class="card">
+        <img src="VOGUE Skincare Glow-Up Routines.JPEG" alt="Skincare">
+        <div class="card-content">
+          <div class="kicker">Skincare</div>
+          <h3>Glow-Up Routines</h3>
+          <p>Learn about trending skincare products and routines that help achieve radiant and healthy skin.</p>
+          <a href="https://www.vogue.com/article/simplified-skincare-routine" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="Makeup.JPEG" alt="Makeup">
+        <div class="card-content">
+          <div class="kicker">Makeup</div>
+          <h3>Bold Colors</h3>
+          <p>Bright, expressive makeup looks are making a comeback, from neon eyes to glossy lips.</p>
+          <a href="Makeup
+Bold Colors" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="BAZAAR Wellness Self-Care Rituals.JPEG" alt="Wellness">
+        <div class="card-content">
+          <div class="kicker">Wellness</div>
+          <h3>Self-Care Rituals</h3>
+          <p>Integrating wellness and mindfulness into beauty routines has become essential for modern lifestyles.</p>
+          <a href="https://www.harpersbazaar.com/uk/self-care-interviews/" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="ALLURE Hair Trend Hairstyles.JPEG" alt="Hair Trends">
+        <div class="card-content">
+          <div class="kicker">Hair</div>
+          <h3>Trend Hairstyles</h3>
+          <p>From natural textures to bold cuts, see the hairstyles that are defining 2025.</p>
+          <a href="https://www.allure.com/hair-ideas" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="glass-panel trending">
+      <h4>Trending Now</h4>
+      <div class="trend">
+        <p>Glow-Up Skincare</p>
+        <a href="https://www.vogue.com/article/best-skincare-trends-2025" target="_blank" class="button">Read</a>
+      </div>
+      <div class="trend">
+        <p>Bold Makeup Colors</p>
+        <a href="https://www.elle.com/beauty/makeup/g32107600/makeup-trends-2025/" target="_blank" class="button">Read</a>
+      </div>
+      <div class="trend">
+        <p>Self-Care Rituals</p>
+        <a href="https://www.harpersbazaar.com/beauty/health-fitness/a36452902/wellness-trends-2025/" target="_blank" class="button">Read</a>
+      </div>
+      <div class="trend">
+        <p>Hair Trend Hairstyles</p>
+        <a href="https://www.allure.com/story/hair-trends-2025" target="_blank" class="button">Read</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  © <span id="year"></span> YZBBeauty — Beauty Trends 2025.
+</footer>
+
+<button class="back-to-top" id="backTop">↑</button>
+
+</div>
+
+<script>
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{backTop.style.display=window.scrollY>300?'block':'none';});
+backTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

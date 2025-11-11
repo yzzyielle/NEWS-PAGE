@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZBLifestyle — Lifestyle Trends</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#FFF8F5;
+  --secondary:#F6F2EE;
+  --accent:#E6D2C4;
+  --highlight:#D9BFAF;
+  --text:#2B2B2B;
+  --muted:#666666;
+  --radius:15px;
+  --max-width:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--primary);display:flex;justify-content:center;padding:30px 15px;}
+.wrap{width:100%;max-width:var(--max-width);}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;}
+.brand{display:flex;align-items:center;gap:15px;}
+.logo{width:60px;height:60px;background:var(--highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;color:var(--text);}
+.site-title{font-size:22px;font-weight:700;}
+.site-sub{font-size:13px;color:var(--muted);}
+nav.top-nav a{margin-left:12px;text-decoration:none;color:var(--text);font-weight:600;padding:8px 14px;border-radius:10px;transition:0.3s;}
+nav.top-nav a:hover, nav.top-nav a.active{background:var(--accent);}
+.main-grid{display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:start;}
+.hero{position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.12);transition:transform 0.3s;}
+.hero:hover{transform:translateY(-5px);}
+.hero img{width:100%;height:350px;object-fit:cover;display:block;}
+.hero-content{position:absolute;bottom:20px;left:20px;background:rgba(255,248,245,0.85);padding:20px;border-radius:var(--radius);}
+.hero-content .kicker{font-size:13px;color:var(--highlight);font-weight:700;text-transform:uppercase;margin-bottom:6px;}
+.hero-content h2{font-size:26px;margin-bottom:10px;}
+.hero-content p{color:var(--muted);line-height:1.6;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:25px;}
+.card{background:var(--secondary);border-radius:var(--radius);overflow:hidden;transition:transform 0.3s;box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+.card:hover{transform:translateY(-5px);}
+.card img{width:100%;height:160px;object-fit:cover;}
+.card-content{padding:15px;display:flex;flex-direction:column;justify-content:space-between;}
+.card-content .kicker{font-size:12px;font-weight:700;color:var(--highlight);margin-bottom:6px;}
+.card-content h3{font-size:17px;margin-bottom:8px;}
+.card-content p{font-size:14px;color:var(--muted);flex:1;}
+.card-content a.button{align-self:flex-start;margin-top:10px;padding:6px 12px;background:var(--highlight);color:var(--text);text-decoration:none;border-radius:8px;font-weight:600;transition:0.3s;}
+.card-content a.button:hover{background:var(--accent);}
+.sidebar{display:flex;flex-direction:column;gap:20px;}
+.glass-panel{background:var(--secondary);padding:15px;border-radius:var(--radius);box-shadow:0 8px 25px rgba(0,0,0,0.12);}
+.trending h4{margin-bottom:12px;}
+.trend{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--accent);}
+.trend p{font-size:14px;color:var(--muted);}
+.trend a.button{padding:4px 10px;background:var(--highlight);color:var(--text);font-size:12px;border-radius:6px;text-decoration:none;transition:0.3s;}
+.trend a.button:hover{background:var(--accent);}
+footer{text-align:center;color:var(--muted);margin-top:35px;font-size:13px;}
+.back-to-top{position:fixed;bottom:20px;right:20px;background:var(--highlight);color:var(--text);border:none;padding:12px;border-radius:50%;cursor:pointer;display:none;transition:0.3s;}
+.back-to-top:hover{transform:translateY(-2px);}
+@media(max-width:900px){
+  .main-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo">YZB</div>
+    <div>
+      <h1 class="site-title">YZBLifestyle</h1>
+      <div class="site-sub">Health - Travel - Home</div>
+    </div>
+  </div>
+  <nav class="top-nav">
+    <a href="NEWSPAGE.html">HOME</a>
+    <a href="FASHION.html">FASHION</a>
+    <a href="BEAUTYPAGE.html">BEAUTY</a>
+  </nav>
+</header>
+
+<main class="main-grid">
+  <section>
+    <!-- HERO -->
+    <div class="hero">
+      <img src="Trends Top Lifestyle Trends to Follow.jpeg" alt="Lifestyle Trends"/>
+      <div class="hero-content">
+        <div class="kicker">2025 Trends</div>
+        <h2>Top Lifestyle Trends to Follow</h2>
+        <p>Stay updated with the latest lifestyle trends, from wellness and travel to home décor and modern living inspirations.</p>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards">
+      <article class="card">
+        <img src="healthline Wellness Mind & Body Balance.jpeg" alt="Wellness"/>
+        <div class="card-content">
+          <div class="kicker">Wellness</div>
+          <h3>Mind & Body Balance</h3>
+          <p>Explore modern wellness routines, fitness tips, and mindfulness practices for a balanced lifestyle.</p>
+          <a href="https://www.healthline.com/health/exercises-for-balance" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="TRAVEL.JPEG" alt="Travel"/>
+        <div class="card-content">
+          <div class="kicker">Travel</div>
+          <h3>Top Destinations</h3>
+          <p>Discover must-visit destinations around the world that are trending for travel enthusiasts in 2025.</p>
+          <a href="https://www.travelandleisure.com/worlds-best-awards-2025-11744233" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="Home Modern Décor Ideas.JPEG" alt="Home Decor"/>
+        <div class="card-content">
+          <div class="kicker">Home</div>
+          <h3>Modern Décor Ideas</h3>
+          <p>Get inspired by interior design trends, cozy setups, and functional home décor tips for 2025.</p>
+          <a href="https://www.housebeautiful.com/" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="Food Healthy Eating.JPEG" alt="Food Trends"/>
+        <div class="card-content">
+          <div class="kicker">Food</div>
+          <h3>Healthy Eating</h3>
+          <p>Learn about trending diets, superfoods, and culinary experiences shaping the food culture this year.</p>
+          <a href="https://www.bonappetit.com/diet/healthyish?srsltid=AfmBOorqLVFI298XGai3FS3mhVgw2kDzLnFGKkhC1btgUed54GdjNJON" target="_blank" class="button">Read More</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="glass-panel trending">
+      <h4>Trending Now</h4>
+      <div class="trend">
+        <p>Yoga & Meditation</p>
+        <a href="https://www.healthline.com/health/wellness-trends-2025" target="_blank" class="button">View</a>
+      </div>
+      <div class="trend">
+        <p>Travel Bucket List</p>
+        <a href="https://www.travelandleisure.com/travel-trends-2025" target="_blank" class="button">View</a>
+      </div>
+      <div class="trend">
+        <p>Home Décor Ideas</p>
+        <a href="https://www.housebeautiful.com/lifestyle-trends-2025" target="_blank" class="button">View</a>
+      </div>
+      <div class="trend">
+        <p>Healthy Recipes</p>
+        <a href="https://www.bonappetit.com/story/food-trends-2025" target="_blank" class="button">View</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  © <span id="year"></span> YZBLifestyle — Lifestyle Trends 2025.
+</footer>
+
+<button class="back-to-top" id="backTop">↑</button>
+
+</div>
+
+<script>
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{backTop.style.display=window.scrollY>300?'block':'none';});
+backTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
